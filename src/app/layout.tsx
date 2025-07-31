@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Codeflix",
-  description: "Plataforma de aulas de programação",
+  title: 'Codeflix',
+  description: 'Plataforma de aulas de programação',
 };
 
 export default function RootLayout({
@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body>{children}</body>
+      <body className="bg-background text-foreground antialiased dark">
+        {children}
+      </body>
     </html>
   );
 }
