@@ -1,7 +1,7 @@
 "use client";
 import { Bell, Menu, Search } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { UseScroll } from "../../hooks/useScroll";
 import {
   Sheet,
   SheetContent,
@@ -77,20 +77,10 @@ const SheetMenu = () => {
 };
 
 export function Header() {
-  const [isScroled, setIsScroled] = useState(false);
-
-  useEffect(() => {
-    const handScrolell = () => {
-      setIsScroled(window.scrollY > 30);
-    };
-    window.addEventListener("scroll", handScrolell);
-    return () => window.removeEventListener("scroll", handScrolell);
-  });
-
   return (
     <div
       className={`fixed top-0 left-0 flex h-20 w-full items-center ${
-        isScroled ? "bg-accent-foreground shadow" : "bg-transparent"
+        UseScroll() ? "bg-accent-foreground shadow" : "bg-transparent"
       }`}
     >
       <header className="container mx-auto flex h-full items-center justify-between px-3 transition-all duration-300 md:px-5">
