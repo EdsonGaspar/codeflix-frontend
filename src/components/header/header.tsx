@@ -11,6 +11,71 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 
+const NavLinks = () => {
+  return (
+    <nav className="hidden md:block">
+      <ul className="flex gap-3 font-semibold text-lg">
+        <li className=" transition-all duration-300 hover:text-primary hover:underline">
+          <Link href="/">Home</Link>
+        </li>
+        <li className="transition-all duration-300 hover:text-primary hover:underline">
+          <Link href={"/tv-shows"}>TV Shows</Link>
+        </li>
+        <li className="transition-all duration-300 hover:text-primary hover:underline">
+          <Link href={"/movies"}>Movies</Link>
+        </li>
+        <li className="transition-all duration-300 hover:text-primary hover:underline">
+          <Link href={"/new-and-popular"}>New & Popular</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+const UserProfile = () => {
+  return (
+    <div className="flex space-x-1.5">
+      <Search className="cursor-pointer hover:text-primary" />
+
+      <Bell className="cursor-not-allowed" />
+    </div>
+  );
+};
+
+const SheetMenu = () => {
+  return (
+    <Sheet>
+      <SheetTrigger>
+        {" "}
+        <Menu className="size-9 cursor-pointer hover:text-primary" />{" "}
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Menu</SheetTitle>
+          <SheetDescription>
+            <ul className="mt-3 flex flex-col gap-2 font-semibold">
+              <li className=" cursor-pointer transition-all duration-300 hover:text-primary hover:underline">
+                <Link className="w-full" href="/">
+                  Home
+                </Link>
+              </li>
+              <li className="transition-all duration-300 hover:cursor-pointer hover:text-primary hover:underline">
+                <Link href={"/tv-shows"}>TV Shows</Link>
+              </li>
+              <li className="transition-all duration-300 hover:cursor-pointer hover:text-primary hover:underline">
+                <Link href={"/movies"}>Movies</Link>
+              </li>
+              <li className="transition-all duration-300 hover:cursor-pointer hover:text-primary hover:underline">
+                <Link href={"/new-and-popular"}>New & Popular</Link>
+              </li>
+            </ul>
+          </SheetDescription>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
+  );
+};
+
 export function Header() {
   const [isScroled, setIsScroled] = useState(false);
 
@@ -33,46 +98,13 @@ export function Header() {
           <h1 className="font-bold text-primary text-xl uppercase md:text-2xl lg:text-4xl">
             <Link href={"/"}>codeflix</Link>
           </h1>
-
-          <div className="hidden md:block">
-            <ul className="flex gap-3 font-semibold text-lg">
-              <li className=" transition-all duration-300 hover:text-primary hover:underline">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="transition-all duration-300 hover:text-primary hover:underline">
-                <Link href={"/tv-shows"}>TV Shows</Link>
-              </li>
-              <li className="transition-all duration-300 hover:text-primary hover:underline">
-                <Link href={"/movies"}>Movies</Link>
-              </li>
-              <li className="transition-all duration-300 hover:text-primary hover:underline">
-                <Link href={"/new-and-popular"}>New & Popular</Link>
-              </li>
-            </ul>
-          </div>
+          <NavLinks />
         </aside>
         <aside className="flex items-center gap-4">
-          <div className="flex space-x-1.5">
-            <Search className="cursor-pointer hover:text-primary" />
+          <UserProfile />
 
-            <Bell className="cursor-not-allowed" />
-          </div>
           <div className="flex cursor-pointer md:hidden">
-            <Sheet>
-              <SheetTrigger>
-                {" "}
-                <Menu className="size-9 cursor-pointer hover:text-primary" />{" "}
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
-                  <SheetDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
-                  </SheetDescription>
-                </SheetHeader>
-              </SheetContent>
-            </Sheet>
+            <SheetMenu />
           </div>
         </aside>
       </header>
