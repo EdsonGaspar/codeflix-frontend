@@ -31,7 +31,7 @@ export default function Home() {
           </aside>
         </div>
       </section>
-      <section>
+      <section className="mt-5">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
         aspernatur repellendus adipisci assumenda, porro possimus amet esse
         fuga? Ad earum doloremque obcaecati eligendi autem distinctio,
