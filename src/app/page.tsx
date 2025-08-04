@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="container relative mx-auto border">
+    <div>
       <section className="relative flex h-full flex-col md:h-[65vh] md:justify-end lg:h-[80vh]">
         <div>
           <Header />
         </div>
-        <div className="space-y-5 px-5 py-52 md:space-y-8 md:px-8 md:py-16 lg:space-y-14">
+        <div className="container mx-auto space-y-5 px-5 py-52 md:space-y-8 md:px-8 md:py-16 lg:space-y-14">
           <aside className="space-y-2.5">
             <Image
               alt="The Wicther"
@@ -31,7 +31,7 @@ export default function Home() {
           </aside>
         </div>
       </section>
-      <section className="mt-5">
+      <section className="container mx-auto mt-5">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
         aspernatur repellendus adipisci assumenda, porro possimus amet esse
         fuga? Ad earum doloremque obcaecati eligendi autem distinctio,
