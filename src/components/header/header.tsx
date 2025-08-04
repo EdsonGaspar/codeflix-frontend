@@ -79,11 +79,11 @@ const SheetMenu = () => {
 export function Header() {
   return (
     <div
-      className={`fixed top-0 left-0 flex h-20 w-full items-center ${
+      className={`fixed top-0 left-0 z-50 flex h-20 w-full items-center ${
         UseScroll() ? "bg-accent-foreground shadow" : "bg-transparent"
       }`}
     >
-      <header className="container mx-auto flex h-full items-center justify-between px-3 transition-all duration-300 md:px-5">
+      <header className="container mx-auto flex h-full items-center justify-between px-5 transition-all duration-300 md:px-8">
         <aside className="flex items-end justify-between md:justify-start md:gap-7">
           <h1 className="font-bold text-primary text-xl uppercase md:text-2xl lg:text-4xl">
             <Link href={"/"}>codeflix</Link>
