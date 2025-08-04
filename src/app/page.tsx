@@ -1,5 +1,7 @@
+import { Info, Play } from "lucide-react";
 import Image from "next/image";
 import { Header } from "@/components/header/header";
+import { Movies } from "@/components/movies/movies";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -26,43 +28,22 @@ export default function Home() {
             </p>
           </aside>
           <aside className="flex flex-col gap-3 md:flex-row">
-            <Button>Assistir</Button>
-            <Button variant={"outline"}>Informações</Button>
+            <Button className="h-10 cursor-pointer text-lg md:w-52">
+              {" "}
+              <Play /> Assistir
+            </Button>
+            <Button
+              className="h-10 cursor-pointer text-lg hover:text-secondary-foreground md:w-52"
+              variant={"outline"}
+            >
+              {" "}
+              <Info /> Informações
+            </Button>
           </aside>
         </div>
       </section>
-      <section className="container mx-auto mt-5">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
-        aspernatur repellendus adipisci assumenda, porro possimus amet esse
-        fuga? Ad earum doloremque obcaecati eligendi autem distinctio,
-        necessitatibus quod aliquid inventore animi? Lorem ipsum dolor sit amet
-        consectetur, <br /> adipisicing elit. Assumenda porro obcaecati error
-        natus recusandae neque dicta eligendi? Quos minus sed accusantium alias
-        delectus eos est incidunt rem. Veritatis, porro <br /> iusto!Lorem Lorem
-        ipsum dolor sit, amet consectetur adipisicing elit. Magnam consequuntur
-        alias necessitatibus et in voluptas recusandae consectetur temporibus
-        error natus a, sunt ea corrupti, optio nam! Labore alias doloremque
-        officia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
-        aspernatur repellendus adipisci assumenda, porro possimus amet esse
-        fuga? Ad earum doloremque obcaecati eligendi autem distinctio,
-        necessitatibus quod aliquid inventore animi? Lorem ipsum dolor sit amet
-        consectetur, <br /> adipisicing elit. Assumenda porro obcaecati error
-        natus recusandae neque dicta eligendi? Quos minus sed accusantium alias
-        delectus eos est incidunt rem. Veritatis, porro <br /> iusto!Lorem Lorem
-        ipsum dolor sit, amet consectetur adipisicing elit. Magnam consequuntur
-        alias necessitatibus et in voluptas recusandae consectetur temporibus
-        error natus a, sunt ea corrupti, optio nam! Labore alias doloremque
-        officia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
-        aspernatur repellendus adipisci assumenda, porro possimus amet esse
-        fuga? Ad earum doloremque obcaecati eligendi autem distinctio,
-        necessitatibus quod aliquid inventore animi? Lorem ipsum dolor sit amet
-        consectetur, <br /> adipisicing elit. Assumenda porro obcaecati error
-        natus recusandae neque dicta eligendi? Quos minus sed accusantium alias
-        delectus eos est incidunt rem. Veritatis, porro <br /> iusto!Lorem Lorem
-        ipsum dolor sit, amet consectetur adipisicing elit. Magnam consequuntur
-        alias necessitatibus et in voluptas recusandae consectetur temporibus
-        error natus a, sunt ea corrupti, optio nam! Labore alias doloremque
-        officia.
+      <section className="container mx-auto px-5 py-3.5 md:my-7 md:px-8">
+        <Movies />
       </section>
     </div>
   );
