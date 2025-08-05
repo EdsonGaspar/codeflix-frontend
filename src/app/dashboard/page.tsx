@@ -1,5 +1,6 @@
 import { H2 } from "@/components/h2";
 import { getSettings } from "@/lib/settings";
+import { BuggyButton } from "./components/baggy-button";
 
 export default async function PageDashBoard() {
   const { theme, lang } = await getSettings();
@@ -10,6 +11,7 @@ export default async function PageDashBoard() {
         <H2>Theme: {theme}</H2>
         <H2>Lang: {lang}</H2>
       </div>
+      <BuggyButton />
     </div>
   );
 }
