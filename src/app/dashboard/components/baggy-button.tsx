@@ -10,8 +10,9 @@ export function BuggyButton() {
   }
   return (
     <button
+      className="border border-red-400 px-2.5 py-1 text-red-500"
       onClick={() => isSetClicked(true)}
-      className="border border-red-400 text-red-500 px-2.5 py-1"
+      type="button"
     >
       Click me
     </button>

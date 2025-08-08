@@ -1,14 +1,15 @@
 "use client";
-import { H2 } from "@/components/h2";
 import { useEffect } from "react";
+import { H2 } from "@/components/h2";
 
 interface PageErrorProps {
   error: unknown;
   reset: () => void;
 }
 
-export default function PageError({ error, reset }: PageErrorProps) {
+export default function PageError({ error }: PageErrorProps) {
   useEffect(() => {
+    // biome-ignore lint/suspicious/noConsole: false positive
     console.log(error);
   }, [error]);
   return (
