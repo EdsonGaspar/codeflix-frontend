@@ -6,7 +6,7 @@ export default function Layout({ children }: DashboardProps) {
   return (
     <div>
       <H2>Layout</H2>
-      <div className="border border-red-500 h-60">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

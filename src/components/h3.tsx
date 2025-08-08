@@ -3,16 +3,16 @@ import { twMerge } from "tailwind-merge";
 interface H2Props extends React.ComponentProps<"h2"> {
   children: React.ReactNode;
 }
-export function H1({ children, className, ...props }: H2Props) {
+export function H3({ children, className, ...props }: H2Props) {
   return (
-    <h1
+    <h3
       className={twMerge(
-        "my-1.5 font-bold text-2xl md:text-3xl lg:text-4xl",
+        "my-1.5 font-bold text-lg md:text-xl lg:text-2xl",
         className
       )}
       {...props}
     >
       {children}
-    </h1>
+    </h3>
   );
 }
