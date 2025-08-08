@@ -6,7 +6,6 @@ export type User = {
   address: Address;
   phone: string;
   website: string;
-  age: string;
   company: Company;
 };
 
