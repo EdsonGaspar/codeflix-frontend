@@ -4,13 +4,14 @@ import { H3 } from "@/components/h3";
 import { H4 } from "@/components/h4";
 import GetUserId from "@/lib/user-id";
 
-type UserSlugProps = {
-  params: {
-    slug: string;
-  };
-};
-export default async function UserSlug({ params }: UserSlugProps) {
-  const { slug } = params;
+export default async function UserSlug({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  // // biome-ignore lint/suspicious/noConsole: <explanation>
+  // console.log(slug);
   const { address, company, email, name, phone, username, website } =
     await GetUserId(slug);
 
