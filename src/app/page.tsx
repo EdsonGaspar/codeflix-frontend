@@ -1,5 +1,6 @@
 import { Info, Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/header/header";
 import { Movies } from "@/components/movies/movies";
 import { Button } from "@/components/ui/button";
@@ -28,10 +29,12 @@ export default function Home() {
             </p>
           </aside>
           <aside className="flex flex-col gap-3 md:flex-row">
-            <Button className="h-10 cursor-pointer text-lg md:w-52">
-              {" "}
-              <Play /> Assistir
-            </Button>
+            <Link href={"../login"}>
+              <Button className="h-10 cursor-pointer text-lg md:w-52">
+                {" "}
+                <Play /> Assistir
+              </Button>
+            </Link>
             <Button
               className="h-10 cursor-pointer text-lg hover:text-secondary-foreground md:w-52"
               variant={"outline"}
