@@ -76,7 +76,18 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
             type="password"
           />
         )}
-
+        {typeForm === "login" && (
+          <p className="mt-1.5 flex items-center justify-center gap-1 text-center text-sm">
+            Recuperar a senha{" "}
+            <Link
+              className="flex items-center gap-1 text-center text-primary"
+              href={"../forget-password"}
+            >
+              <span>aqui</span>
+              <LinkIcon size={17} />
+            </Link>
+          </p>
+        )}
         <div className="flex px-7 py-5">
           <Button
             className="w-full cursor-pointer rounded-lg font-semibold text-lg md:w-32"
