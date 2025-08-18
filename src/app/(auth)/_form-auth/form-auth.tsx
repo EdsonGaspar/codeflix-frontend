@@ -19,7 +19,7 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
       <div className="flex flex-col items-center justify-center font-semibold">
         <H1> {typeForm === "login" ? "Login" : "Cadastrar-se"} </H1>
         <p className="flex w-fit items-center gap-1.5 text-sm md:font-extralight md:text-base">
-          Já tenho uma conta{" "}
+          {typeForm === "login" ? "Criar minha conta" : "Já tenho uma conta"}{" "}
           {typeForm === "login" ? (
             <Link
               className="flex cursor-pointer items-center gap-1 text-pretty text-primary transition-all duration-300 hover:underline "
