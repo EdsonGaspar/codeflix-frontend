@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 type FormAuthProps = {
   typeForm: "login" | "register";
-  onSubmit: (evt: React.FormEvent) => void;
+  onSubmit: (evt: React.FormEvent<HTMLFormElement>) => void;
 };
 
 export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {

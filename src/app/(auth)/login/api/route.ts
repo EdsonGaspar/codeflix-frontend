@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { LoginFormSchema } from '@/lib/validation/login-validation';
+import { LoginFormSchema } from '@/lib/validations/login-validation';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,11 +12,6 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     // biome-ignore lint/suspicious/noConsole: <explanation>
     console.log(error.message);
-    return new NextResponse(JSON.stringify({ error: error.message }), {
-      status: 400,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    return new NextResponse(error.message, { status: 400 });
   }
 }
