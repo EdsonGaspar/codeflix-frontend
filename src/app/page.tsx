@@ -30,7 +30,7 @@ export default function Home() {
           </aside>
           <aside className="flex flex-col gap-3 md:flex-row">
             <Link href={"../login"}>
-              <Button className="h-10 cursor-pointer text-lg md:w-52">
+              <Button className="h-10 w-full cursor-pointer text-lg md:w-52">
                 {" "}
                 <Play /> Assistir
               </Button>
