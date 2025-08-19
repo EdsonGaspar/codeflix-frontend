@@ -9,7 +9,7 @@ type ServerError = {
 
 export function LoginForm() {
   const route = useRouter();
-  const [errors, setErrors] = useState<string[]>([]);
+  const [, setErrors] = useState<string[]>([]);
 
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
@@ -32,10 +32,9 @@ export function LoginForm() {
       const payload: ServerError[] = await response.json();
       setErrors(payload.map((error) => error.message));
     } catch (error) {
-      // biome-ignore lint/suspicious/noConsole: <explanation>
-      console.error(error);
+      // console.error(error);
       //Error inesperado no servidor
-      setErrors(["Erro inesperado no servidor"]);
+      setErrors([`Erro inesperado no servidor, ${error}`]);
     }
   };
 
