@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/suspicious/noConsole: <explanation> */
 import { type NextRequest, NextResponse } from 'next/server';
-import { LoginFormSchema } from '@/lib/validations/login-validation';
+import { RegisterFormSchema } from '@/lib/validations/register-validation';
 
 function getErrorMessage(error: unknown) {
   if (error instanceof Error) {
@@ -10,12 +10,14 @@ function getErrorMessage(error: unknown) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password } = LoginFormSchema.parse(await request.json());
-    console.log(`{Email: ${email} Password: ${password}}`);
+    const { confirm_password, email, name, password } =
+      RegisterFormSchema.parse(await request.json());
+    console.log(
+      `Nome: ${name} Email: ${email} Senha: ${password} Confirma Senha: ${confirm_password}`
+    );
 
-    return new NextResponse('Esta a funcionar');
+    return new NextResponse('Registro funciona');
   } catch (error) {
-    // console.log(error.message);
     return new NextResponse(getErrorMessage(error), { status: 400 });
   }
 }
