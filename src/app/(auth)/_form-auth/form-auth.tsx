@@ -103,14 +103,25 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
             </Link>
           </p>
         )}
-        <div className="flex px-7 py-5">
-          <Button
-            className="w-full cursor-pointer rounded-lg font-semibold text-lg md:w-32"
-            type="submit"
-          >
-            Cadastrar
-          </Button>
-        </div>
+        {typeForm === "login" ? (
+          <div className="flex px-7 py-5">
+            <Button
+              className="w-full cursor-pointer rounded-lg font-semibold text-lg md:w-32"
+              type="submit"
+            >
+              Entrar
+            </Button>
+          </div>
+        ) : (
+          <div className="flex px-7 py-5">
+            <Button
+              className="w-full cursor-pointer rounded-lg font-semibold text-lg md:w-32"
+              type="submit"
+            >
+              Cadastrar
+            </Button>
+          </div>
+        )}
       </section>
     </form>
   );
