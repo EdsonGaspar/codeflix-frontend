@@ -9,8 +9,22 @@ type FormAuthProps = {
   typeForm: "login" | "register";
   onSubmit: (evt: React.FormEvent<HTMLFormElement>) => void;
 };
-
+// type InputItemsProps = {
+//   name: string;
+//   email: string;
+//   password: string;
+//   confirmPassword: string;
+// };
 export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
+  // const {
+  //   register,
+  //   formState: { errors },
+  //   handleSubmit,
+  // } = useForm<InputItemsProps>();
+
+  // const onSubmitAuth: SubmitHandler<InputItemsProps> = (data) =>
+  //   console.log(data);
+
   return (
     <form
       className="flex flex-col items-center justify-center rounded-2xl bg-primary-foreground py-4 opacity-80 md:m-auto md:w-lg lg:w-xl"
@@ -44,12 +58,11 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
             htmlFor="user_name"
             id="1"
             label="Nome de Usuário"
-            name="name_user"
+            name="user_name"
             placeholder="Insira nome do usuário"
             type="text"
           />
         )}
-
         <InputField
           htmlFor="email"
           id="2"
@@ -66,6 +79,7 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
           placeholder="Insira sua senha"
           type="password"
         />
+
         {typeForm === "register" && (
           <InputField
             htmlFor="confirm_password"
@@ -76,6 +90,7 @@ export default function FormAuth({ onSubmit, typeForm }: FormAuthProps) {
             type="password"
           />
         )}
+
         {typeForm === "login" && (
           <p className="mt-1.5 flex items-center justify-center gap-1 text-center text-sm">
             Recuperar a senha{" "}

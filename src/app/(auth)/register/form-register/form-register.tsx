@@ -21,10 +21,10 @@ export default function FormRegister() {
     const confirm_password = formDataRegister.get("confirm_password");
 
     try {
-      const response = await fetch("../register/api", {
+      const response = await fetch("../login/api", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, confirm_password, name }),
+        body: JSON.stringify({ email, password, name, confirm_password }),
       });
 
       if (response.ok) {
