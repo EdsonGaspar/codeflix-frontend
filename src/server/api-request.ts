@@ -1,4 +1,4 @@
-const API_URL= "http://localhost:3333/";
+const api_url = process.env.API_URL;
 
 export interface QueryParams{
     [key: string]: string | number | boolean; 
@@ -10,18 +10,32 @@ export interface RequestOptions{
     rating_like?: string,
 }
 
-export const DefaultRequestOptions:RequestOptions={
+export const defaultRequestOptions:RequestOptions={
     page:1,
     _limit: 10,
 }
 
-export async function  ApiRequest(endPoint: string, query: QueryParams={}, options: RequestOptions={}){
-    try{
+export function buildQueryString(params: QueryParams){
+   const query = Object.entries(params).filter(([,value])=> value !== undefined).map(([key, value])=>[key, encodeURIComponent(String (value))]); 
+    return `?${new URLSearchParams(Object.fromEntries(query)).toString()}`;
+}
 
-        const response = await fetch(`${API_URL}/${endPoint}`);
+export async function  ApiRequest(endPoint: string, query: QueryParams={}, options: RequestOptions={}){
+   
+    const mergeOptios:RequestOptions={...defaultRequestOptions, ...options};
+
+    const queryString: string= buildQueryString({...query, ...mergeOptios})
+    
+    try{
+        const response = await fetch(`${api_url}/${endPoint}/${queryString}`);
+        if(!response.ok){
+            throw new Error(`API request failed: ${response.statusText}`) 
+        }
+        
         const data =  response.json();
         return data;
+
     }catch(error){
-        console.log(error);
+        throw error
     }
 }
